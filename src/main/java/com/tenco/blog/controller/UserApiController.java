@@ -23,4 +23,12 @@ public class UserApiController {
 		int result = userService.createUser(user);
 		return new ResponseDto<Integer>(HttpStatus.OK, result);
 	}
+	
+	@PostMapping("/api/user/login")
+	public ResponseDto<?> loginUser(@RequestBody User user) {
+		
+		System.out.println("user: " + user.toString());
+		ResponseDto<?> responseDto = userService.readUser(user);
+		return responseDto;
+	}
 }

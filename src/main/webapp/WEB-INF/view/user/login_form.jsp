@@ -9,7 +9,8 @@
 		<div class="form-group">
 			<label for="password">password: </label> <input type="password" name="password" id="password" value="1234" class="form-control">
 		</div>
-		<button type="submit" class="btn btn-primary">로그인</button>
+		<button type="button" id="btn--login" class="btn btn-primary">로그인</button>
 	</form>
 </div>
 <%@ include file="../layout/footer.jsp"%>
+<script src="/js/user.js"></script>
