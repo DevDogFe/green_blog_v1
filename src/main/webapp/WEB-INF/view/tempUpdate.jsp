@@ -12,7 +12,6 @@
 <body>
 	<div class="container">
 		<h1>form test</h1>
-		<form action="/temp/join2" method="post">
 			<div class="form-group">
 				<label for="username">username: </label> <input type="text" name="username" id="username" value="항1" class="form-control">
 			</div>
@@ -20,11 +19,13 @@
 				<label for="password">password: </label> <input type="password" name="password" id="password" value="1234" class="form-control">
 			</div>
 			<div class="form-group">
-				<label for="email">email: </label> <input type="text" name="email" id="email" value="a@naver.com" class="form-control">
+				<label for="password">new password: </label> <input type="password" name="newPassword" id="newPassword" value="1111" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="email">new email: </label> <input type="text" name="email" id="email" value="aqwe@naver.com" class="form-control">
 			</div>
 
-		</form>
-		<button id="join--submit" class="btn btn-primary">회원가입</button>
+		<button id="join--submit" class="btn btn-primary">정보수정</button>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(() => {
@@ -35,13 +36,14 @@
 				let data = {
 						username: $("#username").val(),
 						password: $("#password").val(),
+						newPassword: $("#newPassword").val(),
 						email: $("#email").val()
 						};
 				console.log(JSON.stringify(data));
 				
 				$.ajax({
-					type: "POST",
-					url: "/temp/join2",
+					type: "PUT",
+					url: "/temp/update",
 					contentType:"application/json; charset=utf-8",
 					data: JSON.stringify(data),
 					dataType:"json"
